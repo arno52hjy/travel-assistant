@@ -1,99 +1,43 @@
-<<<<<<< HEAD
-# React + TypeScript + Vite
+# 🗺️ 旅行助手 Travel Assistant
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 智能旅行规划工具：输入多个目的地，自动规划最优游览路线、标注地图、推荐周边景点
 
-Currently, two official plugins are available:
+## ✨ 功能特性
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 📍 多地点地图标注
+- 🔄 最优游览顺序规划（最近邻算法）
+- 📏 地点间距离计算
+- ⭐ 周边景点推荐
+- 🗺️ 高德地图集成（无需翻墙）
 
-## React Compiler
+## 🚀 快速开始
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. 克隆项目
+```bash
+git clone https://github.com/arno52hjy/travel-assistant.git
+cd travel-assistant
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 2. 安装依赖
+```bash
+npm install
 ```
-=======
-# travel-assistant
- 旅行助手Bot：多地点路线规划、打车时间估算、周边景点推荐
-# 🗺️ Travel Assistant Bot
 
-> 输入多个目的地，自动规划最优路线、估算打车时间、推荐周边景点
+### 3. 配置 API Key
+复制 `.env.example` 为 `.env`，填入高德地图 API Key：
+VITE_AMAP_KEY=你的高德JS_API_Key
+VITE_AMAP_SCODE=你的高德安全密钥
+> 申请地址：https://lbs.amap.com
 
-## ✨ Features
-- [x] 地图多点标注
-- [x] 最优游览顺序（TSP算法）
-- [x] 打车/步行时间估算  
-- [x] 周边5km景点推荐
-- [x] AI自然语言旅行建议
-- [ ] 行程导出PDF（计划中）
+### 4. 启动项目
+```bash
+npm run dev
+```
 
-## 🚀 Quick Start
-1. Clone 项目
-2. 复制 .env.example 为 .env 并填入你的API keys
-3. npm install && npm start
+## 🛠️ 技术栈
+- React + TypeScript + Vite
+- 高德地图 JS API 1.4
+- Tailwind CSS
 
-## 🔑 APIs Used
-- Google Maps Platform
-- Anthropic Claude API  
-- DeepL Translation API
->>>>>>> a39f1b53a2ffcfa339efdb69c9de2ebd89a34a59
+## 📝 License
+MIT
